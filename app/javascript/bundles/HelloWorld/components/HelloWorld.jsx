@@ -17,15 +17,26 @@ export default class HelloWorld extends React.Component {
     this.state = { name: this.props.name };
   }
 
+  componentDidMount() {
+    // console.log(this.props);
+    const { fetchCompanies } = this.props;
+    // console.log(fetchCompanies);
+    fetchCompanies();
+  }
+
   updateName = (name) => {
-    this.setState({ name });
+    // this.setState({ name });
+    this.props.updateName(name);
+    console.log(this.props.companies);
   };
 
   render() {
+    // console.log(this.props);
     return (
       <div>
         <h3>
-          Hello, {this.state.name}!
+          // Hello, {this.state.name}!
+          Hello, {this.props.name}!
         </h3>
         <hr />
         <form >
@@ -35,10 +46,15 @@ export default class HelloWorld extends React.Component {
           <input
             id="name"
             type="text"
-            value={this.state.name}
+            // value={this.state.name}
             onChange={(e) => this.updateName(e.target.value)}
           />
         </form>
+        <div>
+          <ul>
+            {this.props.companies.map(company => (<li key={company.id}>{company.name}</li>))}
+          </ul>
+        </div>
       </div>
     );
   }
