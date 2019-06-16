@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class HelloWorld extends React.Component {
   static propTypes = {
@@ -27,7 +28,7 @@ export default class HelloWorld extends React.Component {
   updateName = (name) => {
     // this.setState({ name });
     this.props.updateName(name);
-    console.log(this.props.companies);
+    // console.log(this.props.companies);
   };
 
   render() {
@@ -52,7 +53,8 @@ export default class HelloWorld extends React.Component {
         </form>
         <div>
           <ul>
-            {this.props.companies.map(company => (<li key={company.id}>{company.name}</li>))}
+            {this.props.companies.map(company => (<li key={company.id}><Link to={'/companies/' + company.id}>
+{company.name}</Link></li>))}
           </ul>
         </div>
       </div>

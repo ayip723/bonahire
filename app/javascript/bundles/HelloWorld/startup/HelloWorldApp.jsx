@@ -1,5 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 
 import configureStore from '../store/helloWorldStore';
 import HelloWorldContainer from '../containers/HelloWorldContainer';
@@ -9,7 +10,12 @@ import HelloWorldContainer from '../containers/HelloWorldContainer';
 // This code here binds your smart component to the redux store.
 const HelloWorldApp = (props) => (
   <Provider store={configureStore(props)}>
-    <HelloWorldContainer />
+    <HashRouter>
+      <Switch>
+        <Route exact path="/" component={HelloWorldContainer} />
+        <Route component={HelloWorldContainer} />
+      </Switch>
+    </HashRouter>
   </Provider>
 );
 
