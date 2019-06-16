@@ -1,7 +1,6 @@
 // Simple example of a React "smart" component
 
 import { connect } from 'react-redux';
-// import { bindActionCreators } from 'redux';
 import HelloWorld from '../components/HelloWorld';
 import * as actions from '../actions/helloWorldActionCreators';
 // import { fetchCompanies } from '../actions/helloWorldActionCreators';
@@ -23,5 +22,4 @@ const mapStateToProps = (state) => {
 // });
 // console.log(actions);
 export default connect(mapStateToProps, actions)(HelloWorld);
-// export default connect(mapStateToProps, bindActionCreators(actions, dispatch))(HelloWorld);
 // export default connect(mapStateToProps, mapDispatchToProps)(HelloWorld);
