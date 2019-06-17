@@ -34,4 +34,11 @@ export default {
     });
   },
 
+  fetchCompany(id) {
+    return request({
+      method: 'GET',
+      url: 'companies/' + id + '.json',
+      responseType: 'json',
+    });
+  },
 };

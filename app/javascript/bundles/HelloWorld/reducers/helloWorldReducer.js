@@ -11,6 +11,10 @@ const name = (state = {}, action) => {
       return merge({}, state, {name: action.name});
     case actionTypes.FETCH_COMPANIES_SUCCESS:
       return merge({}, state, {companies: action.companies});
+    case actionTypes.FETCH_COMPANY_SUCCESS:
+      const newState = merge({}, state);
+      newState.companies[action.company.id] = action.company;
+      return newState;
     default:
       return state;
   }

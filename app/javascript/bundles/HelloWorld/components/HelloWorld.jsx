@@ -32,7 +32,6 @@ export default class HelloWorld extends React.Component {
   };
 
   render() {
-    // console.log(this.props);
     return (
       <div>
         <h3>
@@ -53,8 +52,7 @@ export default class HelloWorld extends React.Component {
         </form>
         <div>
           <ul>
-            {this.props.companies.map(company => (<li key={company.id}><Link to={'/companies/' + company.id}>
-{company.name}</Link></li>))}
+            {this.props.companies.map(company => (<li key={company.id}><Link to={'/companies/' + company.id}>{company.name}</Link></li>))}
           </ul>
         </div>
       </div>

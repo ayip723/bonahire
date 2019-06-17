@@ -13,13 +13,27 @@ export const updateName = (name) => ({
 export function fetchCompaniesSuccess(data) {
   return {
     type: actionTypes.FETCH_COMPANIES_SUCCESS,
-    companies: data.companies,
+    companies: data,
   };
 }
 
 export function fetchCompaniesFailure(error) {
   return {
     type: actionTypes.FETCH_COMPANIES_FAILURE,
+    error,
+  };
+}
+
+export function fetchCompanySuccess(data) {
+  return {
+    type: actionTypes.FETCH_COMPANY_SUCCESS,
+    company: data,
+  };
+}
+
+export function fetchCompanyFailure(error) {
+  return {
+    type: actionTypes.FETCH_COMPANY_FAILURE,
     error,
   };
 }
@@ -33,4 +47,15 @@ export function fetchCompanies() {
         .catch(error => dispatch(fetchCompaniesFailure(error)))
     );
   };
+}
+
+export function fetchCompany(id) {
+  return (dispatch) => {
+    return (
+      requestsManager
+        .fetchCompany(id)
+        .then(res => dispatch(fetchCompanySuccess(res.data)))
+        .catch(error => dispatch(fetchCompanyFailure(error)))
+    );
+  }
 }

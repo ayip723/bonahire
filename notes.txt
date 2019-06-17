@@ -1,0 +1,18 @@
+Figure out how they do show. Do they store show result? Nope.
+
+TODO:
+
+1, Show the company show page
+2, In it, get the company and display
+
+1, Show company first
+2, Then eliminate jobs from company by applying a param.
+
+3, What should we do when we first don't have a company
+app/javascript/bundles/HelloWorld/containers/CompanyShowContainer.js
+l10
+They provide a default on in selector.
+
+4, Where is the initial state set?
+
+Look into combineReducers.

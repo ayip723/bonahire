@@ -10,15 +10,19 @@ export default class HelloWorld extends React.Component {
   }
 
   componentDidMount() {
-    // // console.log(this.props);
-    // const { fetchCompanies } = this.props;
-    // // console.log(fetchCompanies);
-    // fetchCompanies();
+    const { fetchCompany } = this.props;
+    fetchCompany(this.props.companyId);
   }
 
   render() {
+    // console.log(this.props);
     return (
-      <div>Company Show</div>
+      <div>
+        <div>Company Show</div>
+        <ul>
+          {this.props.company.jobs.map(job => (<li key={job.id}>{job.position}</li>))}
+        </ul>
+      </div>
     );
   }
 }

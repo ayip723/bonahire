@@ -1,2 +1,6 @@
 json.extract! company, :id, :name, :description, :created_at, :updated_at
-json.jobs(company.jobs)
+if show_jobs
+  json.jobs(company.jobs)
+else
+  json.jobs([])
+end
