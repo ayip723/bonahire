@@ -1,6 +1,17 @@
-Figure out how they do show. Do they store show result? Nope.
-
 TODO:
+
+Should have an application model and an interview model
+
+Authentication
+
+A stage should have an name and type, which is an enum.
+
+1, User can authenticate
+2, User can create company and create jobs and stages.
+3, Each step should decide if payable. If payable, devise a way to pay. The company controls the payments.
+Or maybe each step has a time. After the time, it can be set whether it is payable.
+4, So I need a procedure.
+
 
 1, Show the company show page
 2, In it, get the company and display
@@ -16,3 +27,5 @@ They provide a default on in selector.
 4, Where is the initial state set?
 
 Look into combineReducers.
+
+compbineReducer will make the state structure like what it describe, with a certain hierarchy.
