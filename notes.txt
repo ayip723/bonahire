@@ -1,5 +1,11 @@
 TODO:
 
+How do we know which step the application is at?
+How do we know the sequence of the stages?
+
+Should also have a user model, which should include:
+type(category), company_id(optional),
+
 Should have an application model and an interview model
 
 Authentication
