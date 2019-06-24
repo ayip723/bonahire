@@ -12,6 +12,9 @@ import CompanyShowContainer from '../containers/CompanyShowContainer';
 const HelloWorldApp = (props) => (
   <Provider store={configureStore(props)}>
     <HashRouter>
+      <header>
+      Placeholder for greetings!
+      </header>
       <Switch>
         <Route exact path="/" component={HelloWorldContainer} />
         <Route exact path="/companies" component={HelloWorldContainer} />

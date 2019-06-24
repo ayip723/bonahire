@@ -1,5 +1,7 @@
 TODO:
 
+Build the front-end for authentication
+
 Finish the login
 Add company_id, type(category) to user. And write other things in User model.
 
