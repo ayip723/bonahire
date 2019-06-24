@@ -1,5 +1,8 @@
 TODO:
 
+Finish the login
+Add company_id, type(category) to user. And write other things in User model.
+
 How do we know which step the application is at?
 How do we know the sequence of the stages?
 
