@@ -18,13 +18,19 @@ export const receiveErrors = errors => ({
 });
 
 export const signup = user => dispatch => (
-
+  requestsManager
+    .signup(user)
+    .then(res => dispatch(receiveCurrentUser(user)), err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const login = user => dispatch => (
-
+  requestsManager
+    .login(user)
+    .then(res => dispatch(receiveCurrentUser(user)), err => dispatch(receiveErrors(err.responsJSON)))
 );
 
 export const logout = () => dispatch => (
-
+  requestsManager
+    .logout()
+    .then(user => dispatch(logoutCurrentUser()))
 );

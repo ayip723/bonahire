@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 
 import configureStore from '../store/helloWorldStore';
+import GreetingContainer from '../containers/GreetingContainer';
 import HelloWorldContainer from '../containers/HelloWorldContainer';
 import CompanyShowContainer from '../containers/CompanyShowContainer';
 
@@ -13,7 +14,8 @@ const HelloWorldApp = (props) => (
   <Provider store={configureStore(props)}>
     <HashRouter>
       <header>
-      Placeholder for greetings!
+        <h1>BonaHire</h1>
+        <GreetingContainer />
       </header>
       <Switch>
         <Route exact path="/" component={HelloWorldContainer} />

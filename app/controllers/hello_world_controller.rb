@@ -5,6 +5,10 @@ class HelloWorldController < ApplicationController
 
   def index
     # @hello_world_props = { name: "Stranger" }
-    @hello_world_props = { companies: {name: 'Stranger', companies: {}}, currentUser: current_user }
+    if current_user
+      @hello_world_props = { companies: {name: 'Stranger', companies: {}}, session: { id: current_user.id } }
+    else
+      @hello_world_props = { companies: {name: 'Stranger', companies: {}} }
+    end
   end
 end

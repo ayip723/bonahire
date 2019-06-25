@@ -41,4 +41,6 @@ export default {
       responseType: 'json',
     });
   },
+
+  // Add the signup/session functions here.
 };
