@@ -1,5 +1,7 @@
 TODO:
 
+Show the greetings. When clicked on, navigate to the corresponding page.
+
 Build the front-end for authentication
 
 Finish the login
