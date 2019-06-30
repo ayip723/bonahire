@@ -42,5 +42,48 @@ export default {
     });
   },
 
+  // login(user) {
+  //   return request({
+  //     method: 'POST',
+  //     url: '/session',
+  //     data: { user },
+  //     responseType: 'json'
+  //   });
+  // },
+
+  login(user) {
+    return request({
+      method: 'POST',
+      url: '/session',
+      data: { user },
+      responseType: 'json'
+    });
+  },
+
+  // signup(user) {
+  //   return request({
+  //     method: 'POST',
+  //     url: '/user',
+  //     data: {user},
+  //     responseType: 'json'
+  //   });
+  // },
+
+  signup(user) {
+    return $.ajax({
+      method: 'POST',
+      url: '/user',
+      data: {user}
+    });
+  },
+
+  logout(user) {
+    return request({
+      method: 'DELETE',
+      url: '/session',
+      responseType: 'json'
+    });
+  }
+
   // Add the signup/session functions here.
 };
