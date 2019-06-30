@@ -45,7 +45,7 @@ export default class SessionForm extends React.Component {
           <div className="login-form">
             <br/>
             <label>Email:
-              <input type="text" value={this.state.username} value={this.state.username} onChange={this.update('username')} className="login-input" />
+              <input type="text" value={this.state.email} onChange={this.update('email')} className="login-input" />
             </label>
             <br/>
             <label>Password:
