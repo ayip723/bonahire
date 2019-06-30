@@ -6,6 +6,9 @@ import configureStore from '../store/helloWorldStore';
 import GreetingContainer from '../containers/GreetingContainer';
 import HelloWorldContainer from '../containers/HelloWorldContainer';
 import CompanyShowContainer from '../containers/CompanyShowContainer';
+import LoginFormContainer from '../containers/LoginFormContainer';
+import SignupFormContainer from '../containers/SignupFormContainer';
+import { AuthRoute } from '../util/routeUtil';
 
 // See documentation for https://github.com/reactjs/react-redux.
 // This is how you get props from the Rails view into the redux store.
@@ -18,6 +21,8 @@ const HelloWorldApp = (props) => (
         <GreetingContainer />
       </header>
       <Switch>
+        <AuthRoute exact path="/login" component={LoginFormContainer} />
+        <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <Route exact path="/" component={HelloWorldContainer} />
         <Route exact path="/companies" component={HelloWorldContainer} />
         <Route exact path="/companies/:companyId" component={CompanyShowContainer} />

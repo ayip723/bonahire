@@ -20,14 +20,17 @@ const name = (state = {}, action) => {
   }
 };
 
-const session = (state={}, action) => {
+const session = (state={ id: null }, action) => {
   return state;
 };
-const entities = (state={}, action) => {
+const entities = (state={ users: {} }, action) => {
+  return state;
+};
+const errors = (state={ session: [] }, action) => {
   return state;
 };
 
 // const helloWorldReducer = combineReducers({ name });
-const helloWorldReducer = combineReducers({ companies: name, session, entities });
+const helloWorldReducer = combineReducers({ companies: name, session, entities, errors });
 
 export default helloWorldReducer;
