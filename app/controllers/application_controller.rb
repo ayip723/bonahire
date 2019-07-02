@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
     @current_user = user
   end
 
-  def lotout
+  def logout
     current_user.reset_session_token!
     session[:session_token] = nil
     @current_user = nil
@@ -31,5 +31,5 @@ class ApplicationController < ActionController::Base
       render json: { base: ["invalid credentails"] }, status: 401
     end
   end
-  
+
 end

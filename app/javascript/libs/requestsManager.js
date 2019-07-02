@@ -52,11 +52,10 @@ export default {
   // },
 
   login(user) {
-    return request({
-      method: 'POST',
+    return $.ajax({
+      method: 'GET',
       url: '/session',
-      data: { user },
-      responseType: 'json'
+      data: { user }
     });
   },
 
@@ -77,11 +76,17 @@ export default {
     });
   },
 
+  // logout(user) {
+  //   return request({
+  //     method: 'DELETE',
+  //     url: '/session',
+  //     responseType: 'json'
+  //   });
+  // }
   logout(user) {
-    return request({
+    return $.ajax({
       method: 'DELETE',
-      url: '/session',
-      responseType: 'json'
+      url: '/session'
     });
   }
 

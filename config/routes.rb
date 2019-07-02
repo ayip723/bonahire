@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :companies
   resources :jobs
   resource :user, only: [:create]
+  resource :session, only: [:create, :destroy, :show]
 end
