@@ -53,7 +53,7 @@ export default {
 
   login(user) {
     return $.ajax({
-      method: 'GET',
+      method: 'POST',
       url: '/session',
       data: { user }
     });

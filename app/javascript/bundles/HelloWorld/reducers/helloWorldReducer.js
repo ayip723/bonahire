@@ -25,13 +25,12 @@ const _nullUser = Object.freeze({
 });
 
 const session = (state = _nullUser, action) => {
-  // return state;
   Object.freeze(state);
   switch(action.type) {
     case actionTypes.RECEIVE_CURRENT_USER:
       return { id: action.currentUser.id };
     case actionTypes.LOGOUT_CURRENT_USER:
-      return
+      return _nullUser;
     default:
       return state;
   }
@@ -56,7 +55,13 @@ const users = (state={}, action) => {
 const entities = combineReducers({ users })
 
 const errors = (state={ session: [] }, action) => {
-  return state;
+  Object.freeze(state);
+  switch (action.type) {
+    case actionTypes.RECEIVE_CURRENT_USER:
+      return { session: [] };
+    default:
+      return state;
+  }
 };
 
 // const helloWorldReducer = combineReducers({ name });
