@@ -3,6 +3,7 @@ export const selectCompany = ({ companies }, companyId) => {
 };
 
 export const selectJob = ({ companies }, companyId, jobId) => {
+  console.log('here............');
   return companies[companyId][jobId] || {name: null, description: null};
 };
 
