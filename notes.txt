@@ -1,12 +1,18 @@
 TODO:
 
+Resume point:
+building JobShow in components.
+
 Need to fix this problem: after signup, and maybe login, it doesn't redirect. For this, first finish log out. As I can't log out now.
 
 I should display the position.
 Little step:
 
+Why do we need to do selectCompany?
 
 Practice:
 How to add a link?
 import { Link } from 'react-router-dom';
 <Link to={'/jobs/' + job.id}>{job.position}</Link>
+
+<Route exact path="/jobs/:jobId" component={JobShowContainer} />
