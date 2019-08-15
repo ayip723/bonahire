@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class HelloWorld extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ export default class HelloWorld extends React.Component {
       <div>
         <div>Company Show</div>
         <ul>
-          {this.props.company.jobs.map(job => (<li key={job.id}>{job.position}</li>))}
+          {this.props.company.jobs.map(job => (<li key={job.id}><Link to={'/jobs/' + job.id}>{job.position}</Link></li>))}
         </ul>
       </div>
     );

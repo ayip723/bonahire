@@ -1,3 +1,12 @@
 TODO:
 
 Need to fix this problem: after signup, and maybe login, it doesn't redirect. For this, first finish log out. As I can't log out now.
+
+I should display the position.
+Little step:
+
+
+Practice:
+How to add a link?
+import { Link } from 'react-router-dom';
+<Link to={'/jobs/' + job.id}>{job.position}</Link>
