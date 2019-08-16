@@ -3,9 +3,6 @@ export const selectCompany = ( companies , companyId) => {
 };
 
 export const selectJobsForCompany = ({ companies, jobs}, company) => {
-  console.log('------------');
-  console.log(jobs);
-  console.log(companies);
   return company.jobIds.map(jobId => jobs[jobId]);
 };
 
