@@ -24,16 +24,31 @@ export function fetchCompaniesFailure(error) {
   };
 }
 
-export function fetchCompanySuccess(data) {
+export function fetchCompanySuccess({company, jobs}) {
   return {
     type: actionTypes.FETCH_COMPANY_SUCCESS,
-    company: data,
+    company,
+    jobs
   };
 }
 
 export function fetchCompanyFailure(error) {
   return {
     type: actionTypes.FETCH_COMPANY_FAILURE,
+    error,
+  };
+}
+
+export function fetchJobSuccess(data) {
+  return {
+    type: actionTypes.FETCH_JOB_SUCCESS,
+    job: data,
+  };
+}
+
+export function fetchJobFailure(error) {
+  return {
+    type: actionTypes.FETCH_JOB_FAILURE,
     error,
   };
 }
@@ -58,4 +73,15 @@ export function fetchCompany(id) {
         .catch(error => dispatch(fetchCompanyFailure(error)))
     );
   }
+}
+
+export function fetchJob(id) {
+  return (dispatch) => {
+    return (
+      requestManager
+        .fetchJob(id)
+        .then(res => dispatch(fetchJobSuccess(res.data)))
+        .catch(error => dispatch(fetchJobFailure(error)))
+    );
+  };
 }

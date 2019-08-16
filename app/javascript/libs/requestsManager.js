@@ -42,6 +42,14 @@ export default {
     });
   },
 
+  fetchJob(id) {
+    return request({
+      method: 'GET',
+      url: 'jobs/' + id + '.json',
+      responseType: 'json',
+    });
+  },
+
   // login(user) {
   //   return request({
   //     method: 'POST',

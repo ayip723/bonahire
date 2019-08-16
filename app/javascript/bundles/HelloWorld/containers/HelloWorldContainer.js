@@ -10,8 +10,10 @@ import { asArray } from '../reducers/selectors';
 // Which part of the Redux global state does our component want to receive as props?
 // const mapStateToProps = (state) => ({ name: state.companies.name });
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
-    name: state.companies.name,
+    // name: state.name,
+    name: 'hello',
     companies: asArray(state.companies),
   };
 };

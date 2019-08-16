@@ -9,12 +9,35 @@ const name = (state = {}, action) => {
     // case HELLO_WORLD_NAME_UPDATE:
     case actionTypes.HELLO_WORLD_NAME_UPDATE:
       return merge({}, state, {name: action.name});
+    default:
+      return state;
+  }
+};
+
+const companies = (state = {}, action) => {
+  switch (action.type) {
     case actionTypes.FETCH_COMPANIES_SUCCESS:
-      return merge({}, state, {companies: action.companies});
+      return merge({}, state, action.companies);
     case actionTypes.FETCH_COMPANY_SUCCESS:
-      const newState = merge({}, state);
-      newState.companies[action.company.id] = action.company;
+      var newState = merge({}, state);
+      console.log('action.company:', action.company);
+      newState[action.company.id] = action.company;
       return newState;
+    default:
+      return state;
+  }
+};
+
+const jobs = (state = {}, action) => {
+  switch (action.type) {
+    case actionTypes.FETCH_COMPANY_SUCCESS:
+      // console.log('here.......');
+      // console.log(action);
+      return merge({}. state, action.jobs);
+    case actionTypes.FETCH_JOB_SUCCESS:
+      // get job id, set company id in state, set the job
+      var companyId = action.job.company_id;
+      return merge({}, state, {[job.id]: job});
     default:
       return state;
   }
@@ -65,6 +88,6 @@ const errors = (state={ session: [] }, action) => {
 };
 
 // const helloWorldReducer = combineReducers({ name });
-const helloWorldReducer = combineReducers({ companies: name, session, entities, errors });
+const helloWorldReducer = combineReducers({ name, session, entities, errors, jobs, companies });
 
 export default helloWorldReducer;

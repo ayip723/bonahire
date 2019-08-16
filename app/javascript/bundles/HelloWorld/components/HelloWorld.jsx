@@ -32,6 +32,7 @@ export default class HelloWorld extends React.Component {
   };
 
   render() {
+    // console.log('companies:', this.props.companies);
     return (
       <div>
         <h3>

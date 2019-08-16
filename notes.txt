@@ -1,11 +1,10 @@
 TODO:
+Make the job show
 
-1, At JobShow page, when refreshing, it should show the correct things.
 
 STEPS:
 1, Fetch a company from backend.
 2, Put it in the state.
-
 
 Need to fix this problem: after signup, and maybe login, it doesn't redirect. For this, first finish log out. As I can't log out now.
 
