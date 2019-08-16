@@ -20,7 +20,6 @@ const companies = (state = {}, action) => {
       return merge({}, state, action.companies);
     case actionTypes.FETCH_COMPANY_SUCCESS:
       var newState = merge({}, state);
-      console.log('action.company:', action.company);
       newState[action.company.id] = action.company;
       return newState;
     default:
@@ -31,13 +30,11 @@ const companies = (state = {}, action) => {
 const jobs = (state = {}, action) => {
   switch (action.type) {
     case actionTypes.FETCH_COMPANY_SUCCESS:
-      // console.log('here.......');
-      // console.log(action);
       return merge({}. state, action.jobs);
     case actionTypes.FETCH_JOB_SUCCESS:
       // get job id, set company id in state, set the job
       var companyId = action.job.company_id;
-      return merge({}, state, {[job.id]: job});
+      return merge({}, state, {[action.job.id]: action.job});
     default:
       return state;
   }

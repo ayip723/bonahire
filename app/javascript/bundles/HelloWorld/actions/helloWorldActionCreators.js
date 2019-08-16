@@ -78,7 +78,7 @@ export function fetchCompany(id) {
 export function fetchJob(id) {
   return (dispatch) => {
     return (
-      requestManager
+      requestsManager
         .fetchJob(id)
         .then(res => dispatch(fetchJobSuccess(res.data)))
         .catch(error => dispatch(fetchJobFailure(error)))

@@ -12,7 +12,11 @@ export default class JobShow extends React.Component {
 
   render() {
     return (
-      <div>Job Show</div>
+      <div>
+        <div>Job Show</div>
+        <div>{this.props.job.position}</div>
+        <div>{this.props.job.description}</div>
+      </div>
     );
   }
 }
