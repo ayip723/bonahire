@@ -1,4 +1,6 @@
 TODO:
+How to build a json application object for sending to the backend?
+
 1, Build a few new application
 2, Show them by calling index or show
 
