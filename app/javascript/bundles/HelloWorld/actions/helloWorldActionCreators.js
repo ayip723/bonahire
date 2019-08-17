@@ -54,11 +54,17 @@ export function fetchJobFailure(error) {
 }
 
 export function createApplicationSuccess(data) {
-
+  return {
+    type: actionType.CREATE_APPLICATION_SUCCESS,
+    application: data,
+  };
 }
 
 export function createApplicationFailure(error) {
-  
+  return {
+    type: actionType.CREATE_APPLICATION_FAILURE,
+    error
+  };
 }
 
 export function fetchCompanies() {

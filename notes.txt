@@ -1,4 +1,7 @@
 TODO:
+1, Build a few new application
+2, Show them by calling index or show
+
 1, The button should send a request to the backend.
 2, It should create an application to the job.
 3, What should it show on the frontend?
@@ -12,6 +15,12 @@ Need to visualize things.
   Get a function like creatApplication and link it to the view.
 2, Send.
 3, Backend creates a application.
+
+How do we create an application?
+1, Need to work on the route.
+  Need to figure out how to do nested route, a route whose params include jobs and application.
+2, Use the authenticated user.
+Try the nested resource way first.
 
 How to represent which stage it is at?
 I should stop thinking about this question for now. There are actually many ways to do. Don't waste time on it now.
