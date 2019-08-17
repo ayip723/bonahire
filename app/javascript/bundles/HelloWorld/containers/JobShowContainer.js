@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import JobShow from '../components/JobShow';
-import { fetchJob } from '../actions/helloWorldActionCreators';
+import { createApplication, fetchJob } from '../actions/helloWorldActionCreators';
 import { selectJob } from '../reducers/selectors';
 
 const mapStateToProps = (state, { match }) => {
@@ -14,4 +14,10 @@ const mapStateToProps = (state, { match }) => {
   }
 };
 
-export default connect(mapStateToProps, {fetchJob})(JobShow);
+const mapDispatchToProps = dispatch => ({
+  fetchJob: id => dispatch(fetchJob(id)),
+  createApplication: application => dispatch(createApplication(application))
+});
+
+// export default connect(mapStateToProps, {fetchJob})(JobShow);
+export default connect(mapStateToProps, mapDispatchToProps)(JobShow);

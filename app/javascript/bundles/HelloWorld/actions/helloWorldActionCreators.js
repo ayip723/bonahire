@@ -53,6 +53,14 @@ export function fetchJobFailure(error) {
   };
 }
 
+export function createApplicationSuccess(data) {
+
+}
+
+export function createApplicationFailure(error) {
+  
+}
+
 export function fetchCompanies() {
   return (dispatch) => {
     return (
@@ -82,6 +90,17 @@ export function fetchJob(id) {
         .fetchJob(id)
         .then(res => dispatch(fetchJobSuccess(res.data)))
         .catch(error => dispatch(fetchJobFailure(error)))
+    );
+  };
+}
+
+export function createApplication(application) {
+  return (dispatch) => {
+    return (
+      requestsManager
+        .createApplication(application)
+        .then(res => dispatch(createApplicationSuccess(res.data)))
+        .catch(error => dispatch(createApplicationFailure(error)))
     );
   };
 }

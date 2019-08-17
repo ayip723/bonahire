@@ -1,10 +1,20 @@
 TODO:
-Make the job show
+1, The button should send a request to the backend.
+2, It should create an application to the job.
+3, What should it show on the frontend?
+4, User should be able to view his applications.
+5, Employers should be able to move forward with the application.
+6, Applications should be separated in to stages.
 
+Need to visualize things.
+1, Click.
+  First try using mapDispatchToProps
+  Get a function like creatApplication and link it to the view.
+2, Send.
+3, Backend creates a application.
 
-STEPS:
-1, Fetch a company from backend.
-2, Put it in the state.
+How to represent which stage it is at?
+I should stop thinking about this question for now. There are actually many ways to do. Don't waste time on it now.
 
 Need to fix this problem: after signup, and maybe login, it doesn't redirect. For this, first finish log out. As I can't log out now.
 
