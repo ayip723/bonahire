@@ -50,6 +50,14 @@ export default {
     });
   },
 
+  createApplication(application) {
+    return $.ajax({
+      method: 'POST',
+      url: '/jobs/' + application.job_id + '/applications',
+      data: { application },
+    });
+  },
+
   // login(user) {
   //   return request({
   //     method: 'POST',
@@ -97,14 +105,6 @@ export default {
       url: '/session'
     });
   },
-
-  createApplication(application) {
-    return $.ajax({
-      method: 'POST',
-      url: '/jobs/' + application.job_id + '/applications',
-      data: { application }
-    });
-  }
 
   // Add the signup/session functions here.
 };

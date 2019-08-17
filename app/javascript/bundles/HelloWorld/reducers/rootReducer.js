@@ -42,8 +42,8 @@ const jobs = (state = {}, action) => {
 
 const applications = (state = {}, action) => {
   switch (action.type) {
-    case actionType.CREATE_APPLICATION_SUCCESS:
-      return merge({}, state, action.application);
+    case actionTypes.CREATE_APPLICATION_SUCCESS:
+      return merge({}, state, {[action.application.id]: action.application});
     default:
       return state;
   }
@@ -94,6 +94,6 @@ const errors = (state={ session: [] }, action) => {
 };
 
 // const helloWorldReducer = combineReducers({ name });
-const helloWorldReducer = combineReducers({ name, session, entities, errors, jobs, companies });
+const helloWorldReducer = combineReducers({ name, session, entities, errors, jobs, companies, applications });
 
 export default helloWorldReducer;
