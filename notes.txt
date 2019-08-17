@@ -1,4 +1,9 @@
 TODO:
+
+Build the way to receive success of building an application.
+
+We should be able to tell the current user has applied to the job and thus disable the application form.
+
 How to build a json application object for sending to the backend?
 
 1, Build a few new application

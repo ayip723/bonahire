@@ -96,6 +96,14 @@ export default {
       method: 'DELETE',
       url: '/session'
     });
+  },
+
+  createApplication(application) {
+    return $.ajax({
+      method: 'POST',
+      url: '/jobs/' + application.job_id + '/applications',
+      data: { application }
+    });
   }
 
   // Add the signup/session functions here.

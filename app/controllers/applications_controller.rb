@@ -9,7 +9,7 @@ class ApplicationsController < ApplicationController
   end
 
   def create
-    @application = current_user.application.new(application_params)
+    @application = current_user.applications.new(application_params)
 
     if @application.save
       render :show
