@@ -31,16 +31,20 @@ export default class JobShow extends React.Component {
         <div>Job Show</div>
         <div>{this.props.job.position}</div>
         <div>{this.props.job.description}</div>
-        <form onSubmit={this.handleSubmit}>
-          <label>Comment</label>
-          <br/>
-          <textarea
-            value={this.state.comment}
-            onChange={this.update('comment')}
-          />
-          <br/>
-          <button>Apply</button>
-        </form>
+        {this.props.job.applied ? (
+          <form onSubmit={this.handleSubmit}>
+            <label>Comment</label>
+            <br/>
+            <textarea
+              value={this.state.comment}
+              onChange={this.update('comment')}
+            />
+            <br/>
+            <button>Apply</button>
+          </form>
+        ) : (
+          <div>You have applied to this job.</div>
+        )}
       </div>
     );
   }

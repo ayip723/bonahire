@@ -1,5 +1,5 @@
 json.company do
-  json.partial! "company", company: @company, show_jobs: true
+  json.partial! 'company', company: @company
   json.jobIds @company.jobs.pluck(:id)
 end
 
