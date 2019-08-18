@@ -1,4 +1,6 @@
 TODO:
+Should be able to see my own applications
+Companies should be related to multiple admins
 
 Figure out how to add index.
 Figure out how to use model validation.
