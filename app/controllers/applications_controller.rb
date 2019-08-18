@@ -1,11 +1,16 @@
 class ApplicationsController < ApplicationController
-  before_action :set_job!
+  before_action :set_job!, only: [:index, :show]
   def index
     @applications = @job.applications
   end
 
   def show
     @application = @job.applications.find(params[:id])
+  end
+
+  def my_applications
+    @applications = current_user.applications
+    render :index
   end
 
   def create
