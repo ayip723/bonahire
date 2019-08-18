@@ -9,6 +9,7 @@ import CompanyShowContainer from '../containers/CompanyShowContainer';
 import LoginFormContainer from '../containers/LoginFormContainer';
 import SignupFormContainer from '../containers/SignupFormContainer';
 import JobShowContainer from '../containers/JobShowContainer';
+import ApplicationIndexContainer from '../containers/ApplicationIndexContainer';
 import { AuthRoute } from '../util/routeUtil';
 
 // See documentation for https://github.com/reactjs/react-redux.
@@ -28,6 +29,7 @@ const HelloWorldApp = (props) => (
         <Route exact path="/companies" component={HelloWorldContainer} />
         <Route exact path="/companies/:companyId" component={CompanyShowContainer} />
         <Route exact path="/companies/:companyId/jobs/:jobId" component={JobShowContainer} />
+        <Route exact path="/myapplications" component={ApplicationIndexContainer} />
         <Route component={HelloWorldContainer} />
       </Switch>
     </HashRouter>

@@ -1,5 +1,8 @@
 TODO:
 Should be able to see my own applications
+  Create a page and router
+  When loading the page, fetch the applications and then populate
+  Need to build the backend for it.
 Companies should be related to multiple admins
 
 Figure out how to add index.

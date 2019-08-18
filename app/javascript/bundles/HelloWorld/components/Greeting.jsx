@@ -14,6 +14,7 @@ const Greeting = ({ currentUser, logout }) => {
     <hgroup className="header-group">
       <h2 className="header-name">Hi, {currentUser.email}!</h2>
       <button className="header-button" onClick={logout}>Lot out</button>
+      <Link to="/myapplications">My applications</Link>
     </hgroup>
   );
   return currentUser ? personalGreeting() : sessionLinks();
