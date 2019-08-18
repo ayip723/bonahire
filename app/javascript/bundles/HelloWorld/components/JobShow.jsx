@@ -31,7 +31,7 @@ export default class JobShow extends React.Component {
         <div>Job Show</div>
         <div>{this.props.job.position}</div>
         <div>{this.props.job.description}</div>
-        {!this.props.job.applied ? (
+        {true ? (
           <form onSubmit={this.handleSubmit}>
             <label>Comment</label>
             <br/>

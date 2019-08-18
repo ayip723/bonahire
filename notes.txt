@@ -1,7 +1,7 @@
 TODO:
 
-know that I've applied to this jobs
-Only one application to this job.
+Figure out how to add index.
+Figure out how to use model validation.
 
 Build the way to receive success of building an application.
 
