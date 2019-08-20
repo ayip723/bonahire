@@ -49,6 +49,17 @@ const applications = (state = {}, action) => {
   }
 };
 
+const my_applications = (state = {}, action) => {
+  switch (action.type) {
+    case actionTypes.FETCH_MY_APPLICATIONS_SUCCESS:
+      console.log('????')
+      console.log(action);
+      return merge({}, state, action.applications);
+    default:
+      return state;
+  }
+};
+
 const _nullUser = Object.freeze({
   id: null
 });
@@ -94,6 +105,6 @@ const errors = (state={ session: [] }, action) => {
 };
 
 // const helloWorldReducer = combineReducers({ name });
-const helloWorldReducer = combineReducers({ name, session, entities, errors, jobs, companies, applications });
+const helloWorldReducer = combineReducers({ name, session, entities, errors, jobs, companies, applications, my_applications });
 
 export default helloWorldReducer;

@@ -54,7 +54,6 @@ export function fetchJobFailure(error) {
 }
 
 export function createApplicationSuccess(data) {
-  console.log(data);
   return {
     type: actionTypes.CREATE_APPLICATION_SUCCESS,
     application: data.application,
@@ -65,6 +64,13 @@ export function createApplicationFailure(error) {
   return {
     type: actionTypes.CREATE_APPLICATION_FAILURE,
     error
+  };
+}
+
+export function fetchMyApplicationsSuccess(data) {
+  return {
+    type: actionTypes.FETCH_MY_APPLICATIONS_SUCCESS,
+    applications: data
   };
 }
 
@@ -108,6 +114,16 @@ export function createApplication(application) {
         .createApplication(application)
         .then(res => dispatch(createApplicationSuccess(res)))
         // .catch(error => dispatch(createApplicationFailure(error)))
+    );
+  };
+}
+
+export function fetchMyApplications() {
+  return (dispatch) => {
+    return (
+      requestsManager
+        .fetchMyApplications()
+        .then(res => dispatch(fetchMyApplicationsSuccess(res)))
     );
   };
 }

@@ -58,6 +58,13 @@ export default {
     });
   },
 
+  fetchMyApplications() {
+    return $.ajax({
+      method: 'GET',
+      url: '/applications/my_applications',
+    });
+  },
+
   // login(user) {
   //   return request({
   //     method: 'POST',

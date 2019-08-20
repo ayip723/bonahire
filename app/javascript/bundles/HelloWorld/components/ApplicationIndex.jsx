@@ -6,10 +6,17 @@ export default class ApplicationIndex extends React.Component {
   }
 
   componentDidMount() {
-
+    const { fetchMyApplications } = this.props;
+    fetchMyApplications();
   }
 
   render() {
-    return (<div>My applications</div>);
+    return (
+      <div>
+        <ul>
+          {this.props.my_applications.map(application => (<li key={application.id}>{ application.job_id }</li>))}
+        </ul>
+      </div>
+    );
   }
 }
