@@ -18,14 +18,25 @@ Job.create([
   ])
 
 User.create([
-  {email: 'ayip@spincar.com', password: 'CATpig65'},
-  {email: 'ayip2@spincar.com', password: 'CATpig65'},
-  {email: 'ayip3@spincar.com', password: 'CATpig65'}
+  {email: 'applicant@bonahire.com', password: 'CATpig65'},
+  {email: 'applicant2@bonahire.com', password: 'CATpig65'},
+  {email: 'applicant3@bonahire.com', password: 'CATpig65'},
+  {email: 'admin@bonahire.com', password: 'CATpig65'},
+  {email: 'admin2@bonahire.com', password: 'CATpig65'},
+  {email: 'admin3@bonahire.com', password: 'CATpig65'}
   ])
 
+i = 0
 User.all.each do |user|
-  user.add_role :applicant
+  i += 1
+  if i < 4
+    user.add_role :applicant
+  else
+    user.add_role :employer
+  end
 end
+
+
 
 Application.create([
   {job_id: 1, user_id: 1, comment: 'comment 1'},

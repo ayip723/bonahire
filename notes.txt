@@ -1,5 +1,7 @@
 TODO:
 
+Need to make the company associated with a user.
+
 A user should have 2 types, candidate, employer.
 Multiple employer users can be associated to a company.
 
