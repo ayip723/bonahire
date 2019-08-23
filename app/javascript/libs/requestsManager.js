@@ -61,7 +61,7 @@ export default {
   fetchMyApplications() {
     return $.ajax({
       method: 'GET',
-      url: '/applications/my_applications',
+      url: '/applications/my_applications.json',
     });
   },
 
