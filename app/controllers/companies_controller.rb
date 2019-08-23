@@ -6,4 +6,9 @@ class CompaniesController < ApplicationController
   def show
     @company = Company.find(params[:id])
   end
+
+  def my_company
+    @company = current_user.company
+    render :show
+  end
 end

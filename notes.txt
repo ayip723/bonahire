@@ -1,5 +1,7 @@
 TODO:
 
+Maybe I can re-use the my company template.
+
 If I log in as an employer, I should be able to see all my jobs and applications.
 
 Need to make the company associated with a user.
