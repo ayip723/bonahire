@@ -9,7 +9,7 @@ class ApplicationsController < ApplicationController
   end
 
   def my_applications
-    @applications = current_user.applications
+    @applications = current_user.applications.includes(job: :company)
     render :index
   end
 

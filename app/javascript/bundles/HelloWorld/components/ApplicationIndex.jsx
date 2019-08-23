@@ -14,7 +14,7 @@ export default class ApplicationIndex extends React.Component {
     return (
       <div>
         <ul>
-          {this.props.my_applications.map(application => (<li key={application.id}>{ application.job_id }</li>))}
+          {this.props.my_applications.map(application => (<li key={application.id}>{ application.job.position }/{application.job.company.name}</li>))}
         </ul>
       </div>
     );

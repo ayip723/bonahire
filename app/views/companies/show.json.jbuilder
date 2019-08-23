@@ -6,7 +6,7 @@ end
 @company.jobs.each do |job|
   json.jobs do
     json.set! job.id do
-      json.partial! 'jobs/job', job: job
+      json.partial! 'jobs/job', job: job, show_company: false
     end
   end
 end
