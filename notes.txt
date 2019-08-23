@@ -1,4 +1,8 @@
 TODO:
+
+A user should have 2 types, candidate, employer.
+Multiple employer users can be associated to a company.
+
 Should be able to see my own applications
   Create a page and router
   When loading the page, fetch the applications and then populate
