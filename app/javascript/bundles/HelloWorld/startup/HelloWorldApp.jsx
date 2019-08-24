@@ -30,6 +30,7 @@ const HelloWorldApp = (props) => (
         <Route exact path="/companies/:companyId" component={CompanyShowContainer} />
         <Route exact path="/companies/:companyId/jobs/:jobId" component={JobShowContainer} />
         <Route exact path="/my_applications" component={ApplicationIndexContainer} />
+        <Route exact path="/my_company" component={MyCompanyContainer} />
         <Route component={HelloWorldContainer} />
       </Switch>
     </HashRouter>

@@ -1,5 +1,9 @@
 TODO:
 
+Show # of applicants of each job.
+Should be able to click on a link to see all applicants.
+Should be able to move forward with an applicant.
+
 Maybe I can re-use the my company template.
 
 If I log in as an employer, I should be able to see all my jobs and applications.
