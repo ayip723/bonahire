@@ -65,6 +65,13 @@ export default {
     });
   },
 
+  fetchMyCompany() {
+    return $.ajax({
+      method: 'GET',
+      url: '/companies/my_company.json',
+    });
+  },
+
   // login(user) {
   //   return request({
   //     method: 'POST',

@@ -10,6 +10,7 @@ import LoginFormContainer from '../containers/LoginFormContainer';
 import SignupFormContainer from '../containers/SignupFormContainer';
 import JobShowContainer from '../containers/JobShowContainer';
 import ApplicationIndexContainer from '../containers/ApplicationIndexContainer';
+import MyCompanyContainer from '../containers/MyCompanyContainer';
 import { AuthRoute } from '../util/routeUtil';
 
 // See documentation for https://github.com/reactjs/react-redux.

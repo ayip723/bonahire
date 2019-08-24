@@ -52,9 +52,17 @@ const applications = (state = {}, action) => {
 const my_applications = (state = {}, action) => {
   switch (action.type) {
     case actionTypes.FETCH_MY_APPLICATIONS_SUCCESS:
-      console.log('????')
-      console.log(action);
       return merge({}, state, action.applications);
+    default:
+      return state;
+  }
+};
+
+const my_company = (state = {}, action) => {
+  switch (action.type) {
+    case actionTypes.FETCH_MY_COMPANY_SUCCESS:
+      // return merge({}, state, action.company);
+      return merge({}, state, { company: action.company, jobs: action.jobs });
     default:
       return state;
   }
@@ -105,6 +113,6 @@ const errors = (state={ session: [] }, action) => {
 };
 
 // const helloWorldReducer = combineReducers({ name });
-const helloWorldReducer = combineReducers({ name, session, entities, errors, jobs, companies, applications, my_applications });
+const helloWorldReducer = combineReducers({ name, session, entities, errors, jobs, companies, applications, my_applications, my_company });
 
 export default helloWorldReducer;

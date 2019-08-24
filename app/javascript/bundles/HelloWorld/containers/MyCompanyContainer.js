@@ -3,9 +3,11 @@ import MyCompany from '../components/MyCompany';
 import { fetchMyCompany } from '../actions/helloWorldActionCreators';
 
 const mapStateToProps = (state) => {
-  const company = state.my_company;
+  const company = state.my_company.company || {};
+  const jobs = state.my_company.jobs || {};
   return {
-    company
+    company,
+    jobs
   };
 };
 

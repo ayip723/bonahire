@@ -74,6 +74,14 @@ export function fetchMyApplicationsSuccess(data) {
   };
 }
 
+export function fetchMyCompanySuccess(data) {
+  return {
+    type: actionTypes.FETCH_MY_COMPANY_SUCCESS,
+    company: data.company,
+    jobs: data.jobs
+  };
+}
+
 export function fetchCompanies() {
   return (dispatch) => {
     return (
@@ -124,6 +132,16 @@ export function fetchMyApplications() {
       requestsManager
         .fetchMyApplications()
         .then(res => dispatch(fetchMyApplicationsSuccess(res)))
+    );
+  };
+}
+
+export function fetchMyCompany() {
+  return (dispatch) => {
+    return (
+      requestsManager
+        .fetchMyCompany()
+        .then(res => dispatch(fetchMyCompanySuccess(res)))
     );
   };
 }

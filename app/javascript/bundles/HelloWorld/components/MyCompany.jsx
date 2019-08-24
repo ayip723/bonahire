@@ -7,11 +7,11 @@ export default class MyCompany extends React.Component {
   }
 
   componentDidMount() {
-    // const { fetchMyCompany } = this.props;
-    // fetchMyCompany();
+    const { fetchMyCompany } = this.props;
+    fetchMyCompany();
   }
 
   render() {
-    return (<div>My Company</div>);
+    return (<div>{ this.props.company.name }</div>);
   }
 }
