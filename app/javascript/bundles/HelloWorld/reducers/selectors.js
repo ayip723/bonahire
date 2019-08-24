@@ -10,6 +10,6 @@ export const selectJob = ( jobs, jobId) => {
   return jobs[jobId] || {name: null, description: null};
 };
 
-export const asArray = (companies) => (
-  Object.keys(companies).map(key => companies[key])
+export const asArray = (entities) => (
+  Object.keys(entities).map(key => entities[key])
 );

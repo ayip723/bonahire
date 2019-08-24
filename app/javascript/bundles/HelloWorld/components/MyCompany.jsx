@@ -12,6 +12,17 @@ export default class MyCompany extends React.Component {
   }
 
   render() {
-    return (<div>{ this.props.company.name }</div>);
+    return (
+      <div>
+        <div>
+          { this.props.company.name }
+        </div>
+        <div>
+          <ul>
+            {this.props.jobs.map(job => (<li key={job.id}><Link to={'/companies/' + this.props.company.id + '/jobs/' + job.id}>{job.position}</Link></li>))}
+          </ul>
+        </div>
+      </div>
+    );
   }
 }
