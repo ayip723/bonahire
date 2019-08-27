@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   # resources :jobs do
   #   resources :applications
   # end
-  resources :jobs
+  resources :jobs do
+    resources :applications, only: [:index]
+  end
   # resources :applications
   resource :user, only: [:create]
   resource :session, only: [:create, :destroy, :show]
