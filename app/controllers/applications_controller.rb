@@ -1,6 +1,7 @@
 class ApplicationsController < ApplicationController
   before_action :set_job!, only: [:index, :show]
   def index
+    # First need to make sure that this is a company admin.
     @applications = @job.applications
   end
 

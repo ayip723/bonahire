@@ -145,3 +145,13 @@ export function fetchMyCompany() {
     );
   };
 }
+
+export function fetchJobApplications() {
+  return (dispatch) => {
+    return (
+      requestsManager
+        .fetchJobApplications()
+        .then(res => dispatch(fetchJobApplicationsSuccess(res)))
+    );
+  };
+}
