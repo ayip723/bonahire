@@ -19,7 +19,7 @@ export default class MyCompany extends React.Component {
         </div>
         <div>
           <ul>
-            {this.props.jobs.map(job => (<li key={job.id}><Link to={'/companies/' + this.props.company.id + '/jobs/' + job.id}>{job.position}</Link></li>))}
+            {this.props.jobs.map(job => (<li key={job.id}><Link to={'/my_company/jobs/' + job.id}>{job.position}</Link></li>))}
           </ul>
         </div>
       </div>
