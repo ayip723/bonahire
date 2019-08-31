@@ -72,6 +72,13 @@ export default {
     });
   },
 
+  fetchJobApplications(id) {
+    return $.ajax({
+      method: 'GET',
+      url: '/jobs/' + id + '/applications'
+    })
+  },
+
   // login(user) {
   //   return request({
   //     method: 'POST',

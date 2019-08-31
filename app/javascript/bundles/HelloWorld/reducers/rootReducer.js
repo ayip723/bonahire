@@ -58,11 +58,18 @@ const my_applications = (state = {}, action) => {
   }
 };
 
-const my_company = (state = {}, action) => {
+const my_company = (state = {company: {}, jobs: {}, applications: {}}, action) => {
   switch (action.type) {
     case actionTypes.FETCH_MY_COMPANY_SUCCESS:
       // return merge({}, state, action.company);
-      return merge({}, state, { company: action.company, jobs: action.jobs });
+      return merge({}, state, { company: action.company, jobs: action.jobs, applications: {} });
+    case actionTypes.FETCH_JOB_APPLICATIONS_SUCCESS:
+      const newState = merge({}, state);
+      // newState.jobs[action.job.id].applications = action.applications;
+      // newState.jobs = merge({}, newState.jobs, {[action.job.id]: {applications: action.applications}});
+      newState.jobs[action.job.id] = action.job;
+      newState.applications = merge(newState.applications, action.applications);
+      return newState;
     default:
       return state;
   }

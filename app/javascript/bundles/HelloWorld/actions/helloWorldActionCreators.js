@@ -82,6 +82,14 @@ export function fetchMyCompanySuccess(data) {
   };
 }
 
+export function fetchJobApplicationsSuccess(data) {
+  return {
+    type: actionTypes.FETCH_JOB_APPLICATIONS_SUCCESS,
+    applications: data.applications,
+    job: data.job
+  };
+}
+
 export function fetchCompanies() {
   return (dispatch) => {
     return (

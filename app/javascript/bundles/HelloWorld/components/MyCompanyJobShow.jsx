@@ -10,10 +10,17 @@ export default class MyCompanyJobShow extends React.Component {
   }
 
   componentDidMount() {
-
+    const { fetchJobApplications } = this.props;
+    fetchJobApplications(this.props.jobId);
   }
 
   render() {
-    return (<div></div>);
+    return (
+      <div>
+        <ul>
+          {this.props.applications.map(application => <li key={application.id}>{application.comment}</li>)}
+        </ul>
+      </div>
+    );
   }
 }

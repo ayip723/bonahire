@@ -3,6 +3,8 @@ json.extract! application, :id, :user_id, :job_id, :comment
 # if show_job
 # end
 
-json.job do
-  json.partial! '/jobs/job', job: application.job, show_company: true
+if show_job
+  json.job do
+    json.partial! '/jobs/job', job: application.job, show_company: true
+  end
 end

@@ -1,5 +1,12 @@
 TODO:
 
+How to organize state structure?
+
+json.applicationIds @job.applications.pluck(:id)
+
+How to loop through {1: {}, 2: {}} and display in view?
+Get familiar with jbuilder. Take applications/index.json.jbuilder as an example.
+
 Show # of applicants of each job.
 Should be able to click on a link to see all applicants.
 Should be able to move forward with an applicant.
