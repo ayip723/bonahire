@@ -146,11 +146,11 @@ export function fetchMyCompany() {
   };
 }
 
-export function fetchJobApplications() {
+export function fetchJobApplications(id) {
   return (dispatch) => {
     return (
       requestsManager
-        .fetchJobApplications()
+        .fetchJobApplications(id)
         .then(res => dispatch(fetchJobApplicationsSuccess(res)))
     );
   };
