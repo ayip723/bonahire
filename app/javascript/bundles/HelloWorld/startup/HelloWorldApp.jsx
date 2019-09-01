@@ -12,6 +12,7 @@ import JobShowContainer from '../containers/JobShowContainer';
 import ApplicationIndexContainer from '../containers/ApplicationIndexContainer';
 import MyCompanyContainer from '../containers/MyCompanyContainer';
 import MyCompanyJobShowContainer from '../containers/MyCompanyJobShowContainer';
+import ApplicationShowContainer from '../containers/ApplicationShowContainer';
 import { AuthRoute } from '../util/routeUtil';
 
 // See documentation for https://github.com/reactjs/react-redux.
@@ -34,6 +35,7 @@ const HelloWorldApp = (props) => (
         <Route exact path="/my_applications" component={ApplicationIndexContainer} />
         <Route exact path="/my_company" component={MyCompanyContainer} />
         <Route exact path="/my_company/jobs/:jobId" component={MyCompanyJobShowContainer} />
+        <Route exact path="/applications/:applicationId" component={ApplicationShowContainer} />
         <Route component={HelloWorldContainer} />
       </Switch>
     </HashRouter>

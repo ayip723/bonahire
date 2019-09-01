@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // export default () => (
 //   <div>My Company Job Show</div>
@@ -18,7 +19,7 @@ export default class MyCompanyJobShow extends React.Component {
     return (
       <div>
         <ul>
-          {this.props.applications.map(application => <li key={application.id}>{application.comment}</li>)}
+          {this.props.applications.map(application => <li key={application.id}><Link to={`/applications/${application.id}`}>{application.user.email}</Link></li>)}
         </ul>
       </div>
     );

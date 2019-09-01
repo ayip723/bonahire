@@ -1,5 +1,12 @@
 TODO:
 
+1, Display all the stages for an application.
+2, Add a button to the page for moving forward.
+3, Clicking the button will move forward.
+
+In /applications/1, show the stages of the application.
+I should be able to move forward on stages, by adding a moving entry to the table. By clicking a button/link, I should be able to move forward on stages.
+
 How to organize state structure?
 
 json.applicationIds @job.applications.pluck(:id)
