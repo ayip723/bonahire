@@ -79,6 +79,13 @@ export default {
     })
   },
 
+  fetchApplicationMovings(id) {
+    return $.ajax({
+      method: 'GET',
+      url: '/applications/' + id + '/movings'
+    });
+  },
+
   // login(user) {
   //   return request({
   //     method: 'POST',

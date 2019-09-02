@@ -90,6 +90,14 @@ export function fetchJobApplicationsSuccess(data) {
   };
 }
 
+export function fetchApplicationMovingsSuccess(data) {
+  return {
+    type: actionTypes.FETCH_APPLICATION_MOVINGS_SUCCESS,
+    stages: data.stages,
+    movings: data.movings
+  };
+}
+
 export function fetchCompanies() {
   return (dispatch) => {
     return (
@@ -160,6 +168,16 @@ export function fetchJobApplications(id) {
       requestsManager
         .fetchJobApplications(id)
         .then(res => dispatch(fetchJobApplicationsSuccess(res)))
+    );
+  };
+}
+
+export function fetchApplicationMovings(id) {
+  return dispatch => {
+    return (
+      requestsManager
+        .fetchApplicationMovings(id)
+        .then(res => dispatch(fetchApplicationMovingsSuccess(res)))
     );
   };
 }
