@@ -10,6 +10,5 @@
 end
 
 json.job do
-  json.partial! 'jobs/job', job: @job, show_company: false
-  json.applicationIds @job.applications.pluck(:id)
+  json.partial! 'jobs/job', job: @job, show_company: false, show_application_ids: true
 end

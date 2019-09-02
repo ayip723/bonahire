@@ -4,3 +4,8 @@ if show_company
     json.partial! "companies/company", company: job.company
   end
 end
+if show_application_ids
+  json.applicationIds @job.applications.pluck(:id)
+else
+  json.applicationIds []
+end

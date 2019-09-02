@@ -1,6 +1,8 @@
 TODO:
 
-1, Display all the stages for an application.
+1, Display all the stages for an application. Each stage corresponds to a moving. For now, only can move to the next stage.
+How do I know which is the current stage? You may need a field for that. The field should point to the current stage as a foreign key.
+I need to show both the stages and the movings. The stages are for displaying the names and other info. The movings are for showing the comments. Send these things to the frontend, let the frontend figure out to display them and do the moving.
 2, Add a button to the page for moving forward.
 3, Clicking the button will move forward.
 
