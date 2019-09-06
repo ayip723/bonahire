@@ -21,5 +21,6 @@ Rails.application.routes.draw do
     collection do
       get 'my_applications'
     end
+    resources :movings
   end
 end

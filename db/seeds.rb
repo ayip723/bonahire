@@ -37,9 +37,27 @@ Job.create([
   { position: 'Position 4', description: 'Description 4', company_id: 2},
   ])
 
+Stage.create([
+  {job_id: 1, name: 'stage 1', description: 'description 1'},
+  {job_id: 1, name: 'stage 2', description: 'description 2'},
+  {job_id: 2, name: 'stage 1', description: 'description 3'},
+  {job_id: 2, name: 'stage 2', description: 'description 4'},
+  {job_id: 3, name: 'stage 1', description: 'description 5'},
+  {job_id: 3, name: 'stage 2', description: 'description 6'},
+  {job_id: 4, name: 'stage 1', description: 'description 7'},
+  {job_id: 4, name: 'stage 2', description: 'description 8'},
+  ])
+
 Application.create([
   {job_id: 1, user_id: 1, comment: 'comment 1'},
   {job_id: 2, user_id: 1, comment: 'comment 2'},
   {job_id: 1, user_id: 2, comment: 'comment 3'},
   {job_id: 2, user_id: 2, comment: 'comment 4'},
+  ])
+
+Moving.create([
+  {application_id: 1, stage_id: 1, comment: 'comment 1'},
+  {application_id: 2, stage_id: 3, comment: 'comment 2'},
+  {application_id: 3, stage_id: 5, comment: 'comment 3'},
+  {application_id: 4, stage_id: 7, comment: 'comment 4'},
   ])
