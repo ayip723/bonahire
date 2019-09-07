@@ -8,10 +8,12 @@ const mapStateToProps = (state, { match }) => {
   const applicationId = parseInt(match.params.applicationId);
   const application = selectApplication(state.my_company.applications, applicationId);
   const stages = sortBy(asArray(application.stages), 'order');
+  const movings = application.movings;
   return {
     applicationId,
     application,
-    stages
+    stages,
+    movings
   };
 };
 
