@@ -10,6 +10,10 @@ export const selectJob = ( jobs, jobId) => {
   return jobs[jobId] || { name: null, description: null, applicationIds: [] };
 };
 
+export const selectApplication = ( applications, applicationId) => {
+  return applications[applicationId] || { stages: {}, movings: {} };
+};
+
 export const asArray = (entities) => (
   Object.keys(entities).map(key => entities[key])
 );

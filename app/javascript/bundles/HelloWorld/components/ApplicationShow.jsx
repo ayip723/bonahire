@@ -7,10 +7,16 @@ export default class ApplicationShow extends React.Component {
 
   componentDidMount() {
     const { fetchApplicationMovings } = this.props;
-    fetchApplicationMovings(this.props.jobId);
+    fetchApplicationMovings(this.props.applicationId);
   }
 
   render() {
-    return (<div>Application Show</div>);
+    return (
+      <div>
+        <ul>
+          {this.props.stages.map(stage => <li key={stage.id}>{stage.name}</li>)}
+        </ul>
+      </div>
+    );
   }
 }
