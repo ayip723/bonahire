@@ -1,6 +1,7 @@
 class MovingsController < ApplicationController
   before_action :set_application!
   def index
+    @stages = @application.job.stages
     @movings = @application.movings
   end
 
