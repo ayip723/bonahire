@@ -18,4 +18,8 @@ export const asArray = (entities) => (
   Object.keys(entities).map(key => entities[key])
 );
 
+export const sortBy = (entities, field) => (
+  entities.sort((entity1, entity2) => (entity1[field] - entity2[field]))
+);
+
 export const selectApplications = (applications, job) => (job.applicationIds.map(applicationId => applications[applicationId]));

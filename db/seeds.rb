@@ -38,14 +38,14 @@ Job.create([
   ])
 
 Stage.create([
-  {job_id: 1, name: 'stage 1', description: 'description 1'},
-  {job_id: 1, name: 'stage 2', description: 'description 2'},
-  {job_id: 2, name: 'stage 1', description: 'description 3'},
-  {job_id: 2, name: 'stage 2', description: 'description 4'},
-  {job_id: 3, name: 'stage 1', description: 'description 5'},
-  {job_id: 3, name: 'stage 2', description: 'description 6'},
-  {job_id: 4, name: 'stage 1', description: 'description 7'},
-  {job_id: 4, name: 'stage 2', description: 'description 8'},
+  {job_id: 1, name: 'stage 1', description: 'description 1', order: 0},
+  {job_id: 1, name: 'stage 2', description: 'description 2', order: 1},
+  {job_id: 2, name: 'stage 1', description: 'description 3', order: 0},
+  {job_id: 2, name: 'stage 2', description: 'description 4', order: 1},
+  {job_id: 3, name: 'stage 1', description: 'description 5', order: 0},
+  {job_id: 3, name: 'stage 2', description: 'description 6', order: 1},
+  {job_id: 4, name: 'stage 1', description: 'description 7', order: 0},
+  {job_id: 4, name: 'stage 2', description: 'description 8', order: 1},
   ])
 
 Application.create([
