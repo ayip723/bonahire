@@ -13,3 +13,7 @@ json.stages do
     end
   end
 end
+
+json.application do
+  json.extract! @application, :id, :job_id, :user_id, :comment
+end
