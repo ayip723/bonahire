@@ -5,6 +5,7 @@
   json.applications do
     json.set! application.id do
       json.partial! 'application', application: application, show_job: false
+      json.stages []
     end
   end
 end
