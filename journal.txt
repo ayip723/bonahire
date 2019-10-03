@@ -1,0 +1,3 @@
+Oct 2, 2019
+
+I would need to normalize the reducer structure.
