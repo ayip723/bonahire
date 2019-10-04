@@ -58,29 +58,71 @@ const my_applications = (state = {}, action) => {
   }
 };
 
-const my_company = (state = {company: {}, jobs: {}, applications: {}}, action) => {
+// const my_company = (state = {company: {}, jobs: {}, applications: {}}, action) => {
+//   switch (action.type) {
+//     case actionTypes.FETCH_MY_COMPANY_SUCCESS:
+//       // return merge({}, state, action.company);
+//       return merge({}, state, { company: action.company, jobs: action.jobs, applications: {} });
+//     case actionTypes.FETCH_JOB_APPLICATIONS_SUCCESS:
+//       var newState = merge({}, state);
+//       // newState.jobs[action.job.id].applications = action.applications;
+//       // newState.jobs = merge({}, newState.jobs, {[action.job.id]: {applications: action.applications}});
+//       newState.jobs[action.job.id] = action.job;
+//       newState.applications = merge(newState.applications, action.applications);
+//       return newState;
+//     case actionTypes.FETCH_APPLICATION_MOVINGS_SUCCESS:
+//       var newState2 = merge({}, state);
+//       newState2.applications[action.application.id] = newState2.applications[action.application.id] || {};
+//       var application = newState2.applications[action.application.id];
+//       application.movings = action.movings;
+//       application.stages = action.stages;
+//       return newState2;
+//     default:
+//       return state;
+//   }
+// };
+
+const company_info = (state={}, action) => {
   switch (action.type) {
     case actionTypes.FETCH_MY_COMPANY_SUCCESS:
-      // return merge({}, state, action.company);
-      return merge({}, state, { company: action.company, jobs: action.jobs, applications: {} });
-    case actionTypes.FETCH_JOB_APPLICATIONS_SUCCESS:
-      var newState = merge({}, state);
-      // newState.jobs[action.job.id].applications = action.applications;
-      // newState.jobs = merge({}, newState.jobs, {[action.job.id]: {applications: action.applications}});
-      newState.jobs[action.job.id] = action.job;
-      newState.applications = merge(newState.applications, action.applications);
-      return newState;
-    case actionTypes.FETCH_APPLICATION_MOVINGS_SUCCESS:
-      var newState2 = merge({}, state);
-      newState2.applications[action.application.id] = newState2.applications[action.application.id] || {};
-      var application = newState2.applications[action.application.id];
-      application.movings = action.movings;
-      application.stages = action.stages;
-      return newState2;
+      return Object.assign({}, state, action.company);
     default:
       return state;
   }
 };
+
+const company_jobs = (state={}, action) => {
+  switch (action.type) {
+    case actionTypes.FETCH_MY_COMPANY_SUCCESS:
+      return Object.assign({}, state, action.jobs);
+    case actionTypes.FETCH_JOB_APPLICATIONS_SUCCESS:
+      const job = { [action.job.id]: action.job };
+      return Object.assign({}, state, job);
+    default:
+      return state;
+  }
+};
+
+const company_applications = (state={}, action) => {
+  switch (action.type) {
+    case actionTypes.FETCH_JOB_APPLICATIONS_SUCCESS:
+      return Object.assign({}, state, action.applications);
+    case actionTypes.FETCH_APPLICATION_MOVINGS_SUCCESS:
+      const newState = Object.assign({}, state);
+      var application = newState.applications[action.application.id];
+      application.movings = action.movings;
+      application.stages = action.stages;
+      return newState;
+    default:
+      return state;
+  }
+};
+
+const my_company = combineReducers({
+  company: company_info,
+  jobs: company_jobs,
+  applications: company_applications
+});
 
 const _nullUser = Object.freeze({
   id: null
