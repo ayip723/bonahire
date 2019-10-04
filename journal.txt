@@ -1,7 +1,10 @@
-Oct 2, 2019
-
-I would need to normalize the reducer structure.
-
 Oct 3, 2019
 
 Send a request to move to that stage. The server will return the updated movings.
+
+app/javascript/bundles/HelloWorld/components/StageIndexItem.jsx
+In this file, we should get the request function from parent container. The parent container can pass the function to it.
+
+Oct 2, 2019
+
+I would need to normalize the reducer structure.
