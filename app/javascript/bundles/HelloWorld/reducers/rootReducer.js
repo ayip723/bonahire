@@ -108,8 +108,8 @@ const company_applications = (state={}, action) => {
     case actionTypes.FETCH_JOB_APPLICATIONS_SUCCESS:
       return Object.assign({}, state, action.applications);
     case actionTypes.FETCH_APPLICATION_MOVINGS_SUCCESS:
-      const newState = Object.assign({}, state);
-      var application = newState.applications[action.application.id];
+      const newState = Object.assign({}, state, { [action.application.id]: action.application });
+      const application = newState[action.application.id];
       application.movings = action.movings;
       application.stages = action.stages;
       return newState;
