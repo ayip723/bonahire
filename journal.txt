@@ -3,7 +3,9 @@ Oct 3, 2019
 Send a request to move to that stage. The server will return the updated movings.
 
 app/javascript/bundles/HelloWorld/components/StageIndexItem.jsx
-In this file, we should get the request function from parent container. The parent container can pass the function to it.
+In this file, we should get the request function from parent container. The parent container can pass the function to it
+
+I need to create a backend route first. What's the route? It should be something like `create` in movings controller.
 
 Oct 2, 2019
 
