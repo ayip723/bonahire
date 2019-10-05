@@ -1,3 +1,17 @@
+Oct 5, 2019
+
+Build the Backend
+  build the route
+  build the controller
+  It seems done for now. But need to verify later.
+Build the frontend
+  build the util
+    for running the function, i think it should be sufficient to just encapsulate the data in an ordinary object.
+    -> add the comment field in StageIndexItem.js
+  build the reducer
+  bind the function to container
+  attach the function to the button
+
 Oct 3, 2019
 
 Send a request to move to that stage. The server will return the updated movings.

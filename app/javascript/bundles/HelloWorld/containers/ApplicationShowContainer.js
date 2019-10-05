@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { fetchApplicationMovings } from '../actions/helloWorldActionCreators';
+import { fetchApplicationMovings, createMoving } from '../actions/helloWorldActionCreators';
 import ApplicationShow from '../components/ApplicationShow';
 import { selectApplication, asArray, sortBy } from '../reducers/selectors';
 
@@ -18,7 +18,8 @@ const mapStateToProps = (state, { match }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchApplicationMovings: (id) => dispatch(fetchApplicationMovings(id))
+  fetchApplicationMovings: (id) => dispatch(fetchApplicationMovings(id)),
+  createMoving: moving => dispatch(createMoving(moving))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ApplicationShow);

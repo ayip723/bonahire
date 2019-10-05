@@ -86,6 +86,14 @@ export default {
     });
   },
 
+  createMoving(moving) {
+    return $.ajax({
+      method: 'POST',
+      url: '/applications/' + moving.application_id + '/movings',
+      data: { moving }
+    });
+  },
+
   // login(user) {
   //   return request({
   //     method: 'POST',
