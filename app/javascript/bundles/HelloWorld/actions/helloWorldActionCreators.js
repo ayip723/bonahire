@@ -67,6 +67,13 @@ export function createApplicationFailure(error) {
   };
 }
 
+export function createMovingSuccess(data) {
+  return {
+    type: actionTypes.CREATE_MOVING_SUCCESS,
+    application: data.moving,
+  };
+}
+
 export function fetchMyApplicationsSuccess(data) {
   return {
     type: actionTypes.FETCH_MY_APPLICATIONS_SUCCESS,
@@ -179,6 +186,16 @@ export function fetchApplicationMovings(id) {
       requestsManager
         .fetchApplicationMovings(id)
         .then(res => dispatch(fetchApplicationMovingsSuccess(res)))
+    );
+  };
+}
+
+export function createMoving(moving) {
+  return (dispatch) => {
+    return (
+      requestsManager
+        .createMoving(moving)
+        .then(res => dispatch(createMovingSuccess(res)))
     );
   };
 }

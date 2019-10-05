@@ -21,9 +21,7 @@ export default class StageIndexItem extends React.Component {
     const { stageId, applicationId } = this.props;
     const moving = Object.assign({}, this.state, {stage_id: stageId, application_id: applicationId});
     // Still need to add the comment.
-    console.log('----------------------------------');
-    console.log(moving);
-    // this.props.createMoving(moving);
+    this.props.createMoving(moving);
   }
 
   render() {

@@ -1,5 +1,7 @@
 Oct 5, 2019
 
+Need to figure out what other what to return for moving creation success and how it fits into the reducer/state
+
 Build the Backend
   build the route
   build the controller
