@@ -17,3 +17,7 @@ end
 json.application do
   json.extract! @application, :id, :job_id, :user_id, :comment
 end
+
+json.user do
+  json.extract! @application.user, :id, :email
+end

@@ -102,7 +102,8 @@ export function fetchApplicationMovingsSuccess(data) {
     type: actionTypes.FETCH_APPLICATION_MOVINGS_SUCCESS,
     stages: data.stages,
     movings: data.movings,
-    application: data.application
+    application: data.application,
+    user: data.user
   };
 }
 

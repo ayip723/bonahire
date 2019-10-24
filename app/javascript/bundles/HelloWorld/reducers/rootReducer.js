@@ -88,6 +88,7 @@ const company_applications = (state={}, action) => {
       const application = newState[action.application.id];
       application.movings = action.movings;
       application.stages = action.stages;
+      application.user = action.user;
       return newState;
     default:
       return state;
