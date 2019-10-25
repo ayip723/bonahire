@@ -70,7 +70,7 @@ export function createApplicationFailure(error) {
 export function createMovingSuccess(data) {
   return {
     type: actionTypes.CREATE_MOVING_SUCCESS,
-    application: data.moving,
+    moving: data.moving,
   };
 }
 

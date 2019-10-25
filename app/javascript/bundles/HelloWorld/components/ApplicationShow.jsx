@@ -18,7 +18,7 @@ export default class ApplicationShow extends React.Component {
     return (
       <div>
         <ul>
-          {this.props.stages.map(stage => <li key={stage.id}><StageIndexItem text={stage.name} applicationId={applicationId} stageId={stage.id} movings={this.props.movings} createMoving={this.props.createMoving} /></li>)}
+          {this.props.stages.map(stage => <li key={stage.id}><StageIndexItem text={stage.name} applicationId={applicationId} stageId={stage.id} movings={this.props.application.movings} createMoving={this.props.createMoving} /></li>)}
         </ul>
       </div>
     );

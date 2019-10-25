@@ -90,6 +90,18 @@ const company_applications = (state={}, action) => {
       application.stages = action.stages;
       application.user = action.user;
       return newState;
+    case actionTypes.CREATE_MOVING_SUCCESS:
+      const newState2 = Object.assign({}, state);
+      // const newState2 = state;
+      newState2[action.moving.application_id] = Object.assign({}, newState2[action.moving.application_id]);
+      const application2 = newState2[action.moving.application_id];
+      application2.movings = Object.assign({}, application2.movings);
+      const movings = application2.movings;
+      movings[action.moving.stage_id] = action.moving;
+      // console.log('state:', state);
+      // console.log('newState2', newState2);
+      // console.log(state[1] === newState2[1]);
+      return newState2;
     default:
       return state;
   }
