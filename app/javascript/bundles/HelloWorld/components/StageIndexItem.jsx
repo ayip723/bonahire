@@ -25,6 +25,6 @@ export default class StageIndexItem extends React.Component {
   }
 
   render() {
-    return this.props.movings[this.props.stageId] ? <strong>{this.props.text}</strong> : <span>{this.props.text}<button onClick={this.move}>Move to here</button><input type="text" onChange={this.update('comment')}/></span>;
+    return this.props.movings[this.props.stageId] ? <span><strong>{this.props.text}</strong> <span>{ this.props.movings[this.props.stageId].comment }</span></span> : <span>{this.props.text}<button onClick={this.move}>Move to here</button><input type="text" onChange={this.update('comment')}/></span>;
   }
 }
